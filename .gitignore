@@ -1,0 +1,17 @@
+# Dependencies (very important!)
+node_modules/
+*/node_modules/
+
+# Environment Variables (CRITICAL!)
+.env
+*/.env
+
+# Build outputs
+build/
+dist/
+*/build/
+*/dist/
+
+# Logs & OS files
+npm-debug.log*
+.DS_Store
