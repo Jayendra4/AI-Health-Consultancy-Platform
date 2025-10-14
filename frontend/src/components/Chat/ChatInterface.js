@@ -14,14 +14,15 @@ const ChatInterface = ({ isFullScreen = false }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [conversationId, setConversationId] = useState(null);
   const { token, user } = useAuth();
+  const userName = user?.name || 'there';
 
   useEffect(() => {
     setMessages([{
         sender: 'ai',
-        content: `Hello ${user.name}! Ask me anything about your latest health report or general wellness topics.`,
+        content: `Hello ${userName}! Ask me anything about your latest health report or general wellness topics.`,
         timestamp: new Date()
     }]);
-  }, [user.name]);
+  }, [userName]);
 
   const sendMessage = async () => {
     if (inputMessage.trim() === '') return;
@@ -31,6 +32,9 @@ const ChatInterface = ({ isFullScreen = false }) => {
     setIsLoading(true);
 
     try {
+      if (!token) {
+        throw new Error('Not authenticated');
+      }
       const config = { headers: { 'Authorization': `Bearer ${token}` } };
       const body = { message: inputMessage, conversationId: conversationId };
       const response = await axios.post(`${BASE_URL}/api/chat/message`, body, config);
