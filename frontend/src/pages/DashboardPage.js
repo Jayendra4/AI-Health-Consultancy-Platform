@@ -53,7 +53,7 @@ const DashboardPage = ({ view, setView }) => {
     if (view === 'main') {
         fetchHistory();
     }
-  }, [view, location.state, fetchHistory]);
+  }, [view, location.state, location.pathname, fetchHistory, navigate, setView]);
 
   const handleReportGenerated = (reportData) => {
     setCurrentReport(reportData);

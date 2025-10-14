@@ -56,7 +56,7 @@ const Navbar = ({ view, setView }) => { // Accept view and setView from Dashboar
           ) : (
             <ul className="nav-menu">
               <li className="nav-item">
-                <Link to="/login" className="nav-links-btn">Login</Link>
+                <Link to="/login" className="nav-links-btn btn-primary">Login</Link>
               </li>
               <li className="nav-item">
                 <Link to="/register" className="nav-links-btn btn-primary">Sign Up</Link>

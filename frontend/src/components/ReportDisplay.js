@@ -46,8 +46,6 @@ const ReportDisplay = ({ report, onReset }) => {
     
     // Split by markdown headers or bold text patterns
     const headerPattern = /(?:^|\n)\s*(?:\*\*|##)\s*([^*\n]+?)(?:\*\*|##)?\s*(?:\n|$)/g;
-    const parts = [];
-    let lastIndex = 0;
     let match;
 
     // Extract all headers and their positions
@@ -101,7 +99,7 @@ const ReportDisplay = ({ report, onReset }) => {
 
   const overviewSection = findSection(['overview', 'congratulations', 'summary']);
   const compositionSection = findSection(['composition', 'body composition', 'bmi', 'analysis']);
-  const nutritionSection = findSection(['nutritional', 'nutrition', 'dietary', 'diet']);
+  // const nutritionSection = findSection(['nutritional', 'nutrition', 'dietary', 'diet']);
   
   // Improved nutrition content renderer
   const renderNutritionContent = (content) => {
@@ -344,7 +342,6 @@ const ReportDisplay = ({ report, onReset }) => {
               <div className="section-content">
                 {(() => {
                   const bullets = normalizeToBullets(content);
-                  const isLong = bullets.length > 0 ? bullets.length > 5 : content.length > 600;
                   const visibleContent = bullets.length > 0
                     ? (expandedSections[index] ? bullets : bullets.slice(0, 5))
                     : (expandedSections[index] ? content : (content.length > 600 ? content.slice(0, 600) + '...' : content));

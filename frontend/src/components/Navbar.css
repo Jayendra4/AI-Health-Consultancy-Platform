@@ -47,3 +47,12 @@
 .nav-links-btn:not(.btn-primary):hover { background: rgba(255, 255, 255, 0.1); border-color: var(--accent-blue); }
 .btn-primary { background: var(--bg-secondary); border: 1px solid var(--accent-purple); }
 .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--accent-purple); }
+
+@media (max-width: 480px) {
+  .navbar { height: 64px; font-size: 1rem; }
+  .navbar-container { height: 64px; padding: 0 12px; grid-template-columns: auto 1fr auto; }
+  .navbar-logo { font-size: 1.25rem; }
+  .logo-text { font-size: 1.25rem; }
+  .nav-item { height: 64px; }
+  .nav-links-btn { padding: 0.4rem 0.6rem; margin: 0 0.25rem; font-size: 0.85rem; }
+}
