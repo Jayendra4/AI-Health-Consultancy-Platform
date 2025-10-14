@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import { BASE_URL } from '../config';
 import './HealthForm.css';
 import '../pages/Form.css';
 
@@ -21,7 +22,7 @@ const HealthForm = ({ onReportGenerated }) => {
     // setAiReport(''); // <-- This line should be deleted.
 
     try {
-      const API_URL = 'http://localhost:5000/api/reports/generate';
+      const API_URL = `${BASE_URL}/api/reports/generate`;
       const config = {
         headers: {
           'Content-Type': 'application/json',

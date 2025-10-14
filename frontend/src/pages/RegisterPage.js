@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../config';
 import './Form.css'; // Import the shared form styles
 
 const RegisterPage = () => {
@@ -23,7 +24,7 @@ const RegisterPage = () => {
 
     try {
       // The URL for our backend registration endpoint
-      const API_URL = 'http://localhost:5000/api/auth/register';
+      const API_URL = `${BASE_URL}/api/auth/register`;
       
       const response = await axios.post(API_URL, {
         name: data.name,

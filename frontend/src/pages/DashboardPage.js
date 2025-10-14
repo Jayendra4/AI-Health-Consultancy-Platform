@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { BASE_URL } from '../config';
 // --- ADD ALL THESE MISSING IMPORTS ---
 import HealthForm from '../components/HealthForm';
 import ReportDisplay from '../components/ReportDisplay';
@@ -31,7 +32,7 @@ const DashboardPage = ({ view, setView }) => {
     try {
       setIsLoading(true);
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.get('http://localhost:5000/api/reports/history', config);
+      const response = await axios.get(`${BASE_URL}/api/reports/history`, config);
       setReportHistory(response.data.data);
     } catch (err) {
       setError('Failed to fetch report history.');
@@ -75,7 +76,7 @@ const DashboardPage = ({ view, setView }) => {
     if (!confirmDelete) return;
     try {
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      await axios.delete(`http://localhost:5000/api/reports/${report._id}`, config);
+      await axios.delete(`${BASE_URL}/api/reports/${report._id}`, config);
       // Refresh history and reset view if needed
       await fetchHistory();
       if (currentReport && currentReport._id === report._id) {

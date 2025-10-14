@@ -1,6 +1,7 @@
 // src/context/AuthContext.js
 import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
 import axios from 'axios';
+import { BASE_URL } from '../config';
 
 const AuthContext = createContext(null);
 
@@ -14,7 +15,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const config = { headers: { 'Authorization': `Bearer ${authToken}` } };
         // We use the /api/auth/profile route we built in the first phase!
-        const response = await axios.get('http://localhost:5000/api/auth/profile', config);
+        const response = await axios.get(`${BASE_URL}/api/auth/profile`, config);
         setUser(response.data.user);
       } catch (error) {
         console.error("Failed to fetch user", error);

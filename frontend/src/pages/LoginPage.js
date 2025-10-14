@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // Import our custom auth hook
+import { BASE_URL } from '../config';
 import './Form.css'; // Use the same shared styles
 
 const LoginPage = () => {
@@ -18,7 +19,7 @@ const LoginPage = () => {
     setServerError('');
 
     try {
-      const API_URL = 'http://localhost:5000/api/auth/login';
+      const API_URL = `${BASE_URL}/api/auth/login`;
       const response = await axios.post(API_URL, data);
 
       if (response.data && response.data.token) {

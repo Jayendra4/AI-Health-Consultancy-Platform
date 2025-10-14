@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
+import { BASE_URL } from '../../config';
 import './ReportDownload.css';
 
 const ReportDownload = ({ report, isOpen, onClose }) => {
@@ -21,7 +22,7 @@ const ReportDownload = ({ report, isOpen, onClose }) => {
       };
       
       const response = await axios.get(
-        `http://localhost:5000/api/reports/download/${report._id}/${downloadFormat}`,
+        `${BASE_URL}/api/reports/download/${report._id}/${downloadFormat}`,
         config
       );
       

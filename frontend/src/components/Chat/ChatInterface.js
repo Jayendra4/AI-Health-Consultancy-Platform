@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
+import { BASE_URL } from '../../config';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import MessageBubble from './MessageBubble'; // Import new component
 import LoadingDots from '../UI/LoadingDots'; // Import new component
@@ -32,7 +33,7 @@ const ChatInterface = ({ isFullScreen = false }) => {
     try {
       const config = { headers: { 'Authorization': `Bearer ${token}` } };
       const body = { message: inputMessage, conversationId: conversationId };
-      const response = await axios.post('http://localhost:5000/api/chat/message', body, config);
+      const response = await axios.post(`${BASE_URL}/api/chat/message`, body, config);
       const aiMessage = response.data.aiMessage;
       setMessages(prev => [...prev, aiMessage]);
       if (!conversationId) {
