@@ -4,7 +4,7 @@ AI-powered health consultancy: generate concise wellness reports, chat with an A
 
 ## 🎥 Demo
 - Video: https://streamable.com/r2o8o1
-- Live (optional): add your deployed URL here
+- Live (optional): [add your deployed URL here](https://ai-health-consultancy-platform-5ey6.vercel.app/)
 
 ## 📸 Screenshots
 - Starting Page
