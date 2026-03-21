@@ -236,14 +236,12 @@ Contributions are welcome! 🛠
 
 ## 👤 Author
 
-Harsh Shringi
-- **GitHub**: [@Dev-Harsh773](https://github.com/Dev-Harsh773)
-- **LinkedIn**: https://www.linkedin.com/in/harsh073/
-- **Email**: krishringi123@gmail.com
+Jayendra Bamne
+- **GitHub**: [@jayendra](https://github.com/Jayendra4/)
+- **LinkedIn**:https://www.linkedin.com/in/jayendrabamne04/
+- **Email**: jayendrabamne68@gmail.com
+om
 
-## 🙏 Acknowledgments
+## 🤖 AI Health Consultancy Platform
+This project provides intelligent health suggestions using AI-based analysis and user inputs.
 
-- [Groq AI](https://groq.com/)
-- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-- [GSAP](https://greensock.com/gsap/)
-- [Tailwind CSS](https://tailwindcss.com/)
